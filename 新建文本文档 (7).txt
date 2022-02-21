@@ -1,0 +1,25 @@
+
+setInterval(function(){
+var mytext = document.getElementById("mytext").innerText;
+  console.log(mytext);
+},1000);
+
+//监听span值变化
+//<scripttype="text/javascript"src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+var script = document.createElement('script');
+script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+document.getElementsByTagName('head')[0].appendChild(script);
+
+$("#nprice").bind('DOMNodeInserted',function(e){
+//console.log(document.getElementById("nprice").innerText);
+//执行相应的操作
+console.log('DOMNodeInserted');
+console.log($(e.target).html());
+
+});
+
+
+$("#mytext").bind("change",function(e){
+     console.log($(e.target).html());
+});
